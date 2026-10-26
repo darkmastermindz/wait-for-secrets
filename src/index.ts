@@ -7,10 +7,10 @@ import {
 } from "./common";
 interface HttpBinData {
   url: string;
-  data: any;
-  json: any;
-  headers: any;
-  args?: any;
+  data: unknown;
+  json: unknown;
+  headers: unknown;
+  args?: unknown;
 }
 
 (async () => {
@@ -19,34 +19,34 @@ interface HttpBinData {
 
 async function waitForSecrets() {
   // call API
-  let _http = new httpm.HttpClient();
+  const _http = new httpm.HttpClient();
   _http.requestOptions = { socketTimeout: 3 * 1000 };
-  var counter = 0;
+  let counter = 0;
 
-  var environmentData = parseDataFromEnvironment();
+  const environmentData = parseDataFromEnvironment();
 
-  var secretUrl = generateSecretURL(
+  const secretUrl = generateSecretURL(
     environmentData[0],
     environmentData[1],
     environmentData[2]
   );
 
-  var slackWebhookUrl = core.getInput("slack-webhook-url");
+  const slackWebhookUrl = core.getInput("slack-webhook-url");
 
-  var secretsTimeOut: number = +core.getInput("wait-timeout");
+  const secretsTimeOut: number = +core.getInput("wait-timeout");
 
   if (slackWebhookUrl !== undefined && slackWebhookUrl !== "") {
     await sendToSlack(slackWebhookUrl, secretUrl);
   }
 
-  var authIDToken = await core.getIDToken();
+  let authIDToken = await core.getIDToken();
 
-  var secretsString = core.getMultilineInput("secrets");
+  const secretsString = core.getMultilineInput("secrets");
 
-  var url = "https://prod.api.stepsecurity.io/v1/secrets";
-  var additionalHeaders = { Authorization: "Bearer " + authIDToken };
+  const url = "https://prod.api.stepsecurity.io/v1/secrets";
+  let additionalHeaders = { Authorization: "Bearer " + authIDToken };
 
-  var putResponse = await _http.putJson<HttpBinData>(
+  const putResponse = await _http.putJson<HttpBinData>(
     url,
     secretsString,
     additionalHeaders
@@ -61,15 +61,15 @@ async function waitForSecrets() {
       authIDToken = await core.getIDToken();
       additionalHeaders = { Authorization: "Bearer " + authIDToken };
 
-      var response = await _http.get(url, additionalHeaders);
+      const response = await _http.get(url, additionalHeaders);
       if (response.message.statusCode === 200) {
         const body: string = await response.readBody();
         const respJSON = JSON.parse(body);
 
         if (respJSON.areSecretsSet === true) {
           setSecrets(respJSON.secrets);
-          var response = await _http.del(url, additionalHeaders);
-          if (response.message.statusCode === 200) {
+          const delResponse = await _http.del(url, additionalHeaders);
+          if (delResponse.message.statusCode === 200) {
             console.log("Successfully cleared secrets");
           }
           break;
@@ -91,7 +91,7 @@ async function waitForSecrets() {
           break;
         }
       } else {
-        let body: string = await response.readBody();
+        const body: string = await response.readBody();
         if (body !== "Token used before issued") {
           console.log(`\nresponse: ${body}`);
           break;
@@ -107,10 +107,10 @@ async function waitForSecrets() {
 }
 
 async function sendToSlack(slackWebhookUrl, url) {
-  var slackPostData = { text: url };
-  let _http = new httpm.HttpClient();
+  const slackPostData = { text: url };
+  const _http = new httpm.HttpClient();
   _http.requestOptions = { socketTimeout: 3 * 1000 };
-  var slackresponse = await _http.postJson(slackWebhookUrl, slackPostData);
+  const slackresponse = await _http.postJson(slackWebhookUrl, slackPostData);
   if (slackresponse.statusCode === 200) {
     console.log("Visit the URL sent to Slack to input the secrets.");
   } else {
