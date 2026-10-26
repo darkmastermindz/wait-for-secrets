@@ -1,7 +1,7 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 351:
+/***/ 914:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -31,8 +31,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
-const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(278);
+const os = __importStar(__nccwpck_require__(857));
+const utils_1 = __nccwpck_require__(302);
 /**
  * Commands
  *
@@ -104,7 +104,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 186:
+/***/ 484:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -143,12 +143,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.platform = exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = exports.markdownSummary = exports.summary = exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(351);
-const file_command_1 = __nccwpck_require__(717);
-const utils_1 = __nccwpck_require__(278);
-const os = __importStar(__nccwpck_require__(37));
-const path = __importStar(__nccwpck_require__(17));
-const oidc_utils_1 = __nccwpck_require__(41);
+const command_1 = __nccwpck_require__(914);
+const file_command_1 = __nccwpck_require__(753);
+const utils_1 = __nccwpck_require__(302);
+const os = __importStar(__nccwpck_require__(857));
+const path = __importStar(__nccwpck_require__(928));
+const oidc_utils_1 = __nccwpck_require__(306);
 /**
  * The code to exit an action
  */
@@ -433,29 +433,29 @@ exports.getIDToken = getIDToken;
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(327);
+var summary_1 = __nccwpck_require__(847);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(327);
+var summary_2 = __nccwpck_require__(847);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(981);
+var path_utils_1 = __nccwpck_require__(976);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
 /**
  * Platform utilities exports
  */
-exports.platform = __importStar(__nccwpck_require__(243));
+exports.platform = __importStar(__nccwpck_require__(968));
 //# sourceMappingURL=core.js.map
 
 /***/ }),
 
-/***/ 717:
+/***/ 753:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -488,10 +488,10 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const crypto = __importStar(__nccwpck_require__(113));
-const fs = __importStar(__nccwpck_require__(147));
-const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(278);
+const crypto = __importStar(__nccwpck_require__(982));
+const fs = __importStar(__nccwpck_require__(896));
+const os = __importStar(__nccwpck_require__(857));
+const utils_1 = __nccwpck_require__(302);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -524,7 +524,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 
 /***/ }),
 
-/***/ 41:
+/***/ 306:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -540,9 +540,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(255);
-const auth_1 = __nccwpck_require__(526);
-const core_1 = __nccwpck_require__(186);
+const http_client_1 = __nccwpck_require__(844);
+const auth_1 = __nccwpck_require__(552);
+const core_1 = __nccwpck_require__(484);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -608,7 +608,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 981:
+/***/ 976:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -638,7 +638,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = void 0;
-const path = __importStar(__nccwpck_require__(17));
+const path = __importStar(__nccwpck_require__(928));
 /**
  * toPosixPath converts the given path to the posix form. On Windows, \\ will be
  * replaced with /.
@@ -677,7 +677,7 @@ exports.toPlatformPath = toPlatformPath;
 
 /***/ }),
 
-/***/ 243:
+/***/ 968:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -719,8 +719,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getDetails = exports.isLinux = exports.isMacOS = exports.isWindows = exports.arch = exports.platform = void 0;
-const os_1 = __importDefault(__nccwpck_require__(37));
-const exec = __importStar(__nccwpck_require__(514));
+const os_1 = __importDefault(__nccwpck_require__(857));
+const exec = __importStar(__nccwpck_require__(236));
 const getWindowsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
     const { stdout: version } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Version"', undefined, {
         silent: true
@@ -778,7 +778,7 @@ exports.getDetails = getDetails;
 
 /***/ }),
 
-/***/ 327:
+/***/ 847:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -794,8 +794,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.summary = exports.markdownSummary = exports.SUMMARY_DOCS_URL = exports.SUMMARY_ENV_VAR = void 0;
-const os_1 = __nccwpck_require__(37);
-const fs_1 = __nccwpck_require__(147);
+const os_1 = __nccwpck_require__(857);
+const fs_1 = __nccwpck_require__(896);
 const { access, appendFile, writeFile } = fs_1.promises;
 exports.SUMMARY_ENV_VAR = 'GITHUB_STEP_SUMMARY';
 exports.SUMMARY_DOCS_URL = 'https://docs.github.com/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary';
@@ -1068,7 +1068,7 @@ exports.summary = _summary;
 
 /***/ }),
 
-/***/ 278:
+/***/ 302:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1115,7 +1115,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 514:
+/***/ 236:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1150,8 +1150,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getExecOutput = exports.exec = void 0;
-const string_decoder_1 = __nccwpck_require__(576);
-const tr = __importStar(__nccwpck_require__(159));
+const string_decoder_1 = __nccwpck_require__(193);
+const tr = __importStar(__nccwpck_require__(665));
 /**
  * Exec a command.
  * Output will be streamed to the live console.
@@ -1225,7 +1225,7 @@ exports.getExecOutput = getExecOutput;
 
 /***/ }),
 
-/***/ 159:
+/***/ 665:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1260,13 +1260,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.argStringToArray = exports.ToolRunner = void 0;
-const os = __importStar(__nccwpck_require__(37));
-const events = __importStar(__nccwpck_require__(361));
-const child = __importStar(__nccwpck_require__(81));
-const path = __importStar(__nccwpck_require__(17));
-const io = __importStar(__nccwpck_require__(436));
-const ioUtil = __importStar(__nccwpck_require__(962));
-const timers_1 = __nccwpck_require__(512);
+const os = __importStar(__nccwpck_require__(857));
+const events = __importStar(__nccwpck_require__(434));
+const child = __importStar(__nccwpck_require__(317));
+const path = __importStar(__nccwpck_require__(928));
+const io = __importStar(__nccwpck_require__(994));
+const ioUtil = __importStar(__nccwpck_require__(207));
+const timers_1 = __nccwpck_require__(557);
 /* eslint-disable @typescript-eslint/unbound-method */
 const IS_WINDOWS = process.platform === 'win32';
 /*
@@ -1850,7 +1850,7 @@ class ExecState extends events.EventEmitter {
 
 /***/ }),
 
-/***/ 526:
+/***/ 552:
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
@@ -1938,7 +1938,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 255:
+/***/ 844:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1974,10 +1974,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
-const http = __importStar(__nccwpck_require__(685));
-const https = __importStar(__nccwpck_require__(687));
-const pm = __importStar(__nccwpck_require__(835));
-const tunnel = __importStar(__nccwpck_require__(294));
+const http = __importStar(__nccwpck_require__(611));
+const https = __importStar(__nccwpck_require__(692));
+const pm = __importStar(__nccwpck_require__(988));
+const tunnel = __importStar(__nccwpck_require__(770));
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -2550,7 +2550,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 835:
+/***/ 988:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -2618,7 +2618,7 @@ exports.checkBypass = checkBypass;
 
 /***/ }),
 
-/***/ 962:
+/***/ 207:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -2654,8 +2654,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var _a;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getCmdPath = exports.tryGetExecutablePath = exports.isRooted = exports.isDirectory = exports.exists = exports.READONLY = exports.UV_FS_O_EXLOCK = exports.IS_WINDOWS = exports.unlink = exports.symlink = exports.stat = exports.rmdir = exports.rm = exports.rename = exports.readlink = exports.readdir = exports.open = exports.mkdir = exports.lstat = exports.copyFile = exports.chmod = void 0;
-const fs = __importStar(__nccwpck_require__(147));
-const path = __importStar(__nccwpck_require__(17));
+const fs = __importStar(__nccwpck_require__(896));
+const path = __importStar(__nccwpck_require__(928));
 _a = fs.promises
 // export const {open} = 'fs'
 , exports.chmod = _a.chmod, exports.copyFile = _a.copyFile, exports.lstat = _a.lstat, exports.mkdir = _a.mkdir, exports.open = _a.open, exports.readdir = _a.readdir, exports.readlink = _a.readlink, exports.rename = _a.rename, exports.rm = _a.rm, exports.rmdir = _a.rmdir, exports.stat = _a.stat, exports.symlink = _a.symlink, exports.unlink = _a.unlink;
@@ -2808,7 +2808,7 @@ exports.getCmdPath = getCmdPath;
 
 /***/ }),
 
-/***/ 436:
+/***/ 994:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -2843,9 +2843,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.findInPath = exports.which = exports.mkdirP = exports.rmRF = exports.mv = exports.cp = void 0;
-const assert_1 = __nccwpck_require__(491);
-const path = __importStar(__nccwpck_require__(17));
-const ioUtil = __importStar(__nccwpck_require__(962));
+const assert_1 = __nccwpck_require__(613);
+const path = __importStar(__nccwpck_require__(928));
+const ioUtil = __importStar(__nccwpck_require__(207));
 /**
  * Copies a file or folder.
  * Based off of shelljs - https://github.com/shelljs/shelljs/blob/9237f66c52e5daa40458f94f9565e18e8132f5a6/src/cp.js
@@ -3114,27 +3114,27 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
-/***/ 294:
+/***/ 770:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(219);
+module.exports = __nccwpck_require__(218);
 
 
 /***/ }),
 
-/***/ 219:
+/***/ 218:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-var net = __nccwpck_require__(808);
-var tls = __nccwpck_require__(404);
-var http = __nccwpck_require__(685);
-var https = __nccwpck_require__(687);
-var events = __nccwpck_require__(361);
-var assert = __nccwpck_require__(491);
-var util = __nccwpck_require__(837);
+var net = __nccwpck_require__(278);
+var tls = __nccwpck_require__(756);
+var http = __nccwpck_require__(611);
+var https = __nccwpck_require__(692);
+var events = __nccwpck_require__(434);
+var assert = __nccwpck_require__(613);
+var util = __nccwpck_require__(23);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -3394,7 +3394,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 491:
+/***/ 613:
 /***/ ((module) => {
 
 "use strict";
@@ -3402,7 +3402,7 @@ module.exports = require("assert");
 
 /***/ }),
 
-/***/ 81:
+/***/ 317:
 /***/ ((module) => {
 
 "use strict";
@@ -3410,7 +3410,7 @@ module.exports = require("child_process");
 
 /***/ }),
 
-/***/ 113:
+/***/ 982:
 /***/ ((module) => {
 
 "use strict";
@@ -3418,7 +3418,7 @@ module.exports = require("crypto");
 
 /***/ }),
 
-/***/ 361:
+/***/ 434:
 /***/ ((module) => {
 
 "use strict";
@@ -3426,7 +3426,7 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ 147:
+/***/ 896:
 /***/ ((module) => {
 
 "use strict";
@@ -3434,7 +3434,7 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ 685:
+/***/ 611:
 /***/ ((module) => {
 
 "use strict";
@@ -3442,7 +3442,7 @@ module.exports = require("http");
 
 /***/ }),
 
-/***/ 687:
+/***/ 692:
 /***/ ((module) => {
 
 "use strict";
@@ -3450,7 +3450,7 @@ module.exports = require("https");
 
 /***/ }),
 
-/***/ 808:
+/***/ 278:
 /***/ ((module) => {
 
 "use strict";
@@ -3458,7 +3458,7 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 37:
+/***/ 857:
 /***/ ((module) => {
 
 "use strict";
@@ -3466,7 +3466,7 @@ module.exports = require("os");
 
 /***/ }),
 
-/***/ 17:
+/***/ 928:
 /***/ ((module) => {
 
 "use strict";
@@ -3474,7 +3474,7 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 576:
+/***/ 193:
 /***/ ((module) => {
 
 "use strict";
@@ -3482,7 +3482,7 @@ module.exports = require("string_decoder");
 
 /***/ }),
 
-/***/ 512:
+/***/ 557:
 /***/ ((module) => {
 
 "use strict";
@@ -3490,7 +3490,7 @@ module.exports = require("timers");
 
 /***/ }),
 
-/***/ 404:
+/***/ 756:
 /***/ ((module) => {
 
 "use strict";
@@ -3498,7 +3498,7 @@ module.exports = require("tls");
 
 /***/ }),
 
-/***/ 837:
+/***/ 23:
 /***/ ((module) => {
 
 "use strict";
@@ -3539,19 +3539,7 @@ module.exports = require("util");
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__nccwpck_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
+/******/ 	/* webpack/runtime/asset-relocator-loader */
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
@@ -3559,24 +3547,22 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-// ESM COMPAT FLAG
-__nccwpck_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@actions/http-client/lib/index.js
-var lib = __nccwpck_require__(255);
+var lib = __nccwpck_require__(844);
 // EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
-var core = __nccwpck_require__(186);
+var core = __nccwpck_require__(484);
 ;// CONCATENATED MODULE: ./src/common.ts
 
 function parseDataFromEnvironment() {
-    var repo = process.env["GITHUB_REPOSITORY"].split("/")[1];
-    var owner = process.env["GITHUB_REPOSITORY"].split("/")[0];
-    var runId = process.env["GITHUB_RUN_ID"];
-    let infoArray = [owner, repo, runId];
+    const repo = process.env["GITHUB_REPOSITORY"].split("/")[1];
+    const owner = process.env["GITHUB_REPOSITORY"].split("/")[0];
+    const runId = process.env["GITHUB_RUN_ID"];
+    const infoArray = [owner, repo, runId];
     return infoArray;
 }
 function generateSecretURL(owner, repo, runId) {
-    var secretUrl = `https://app.stepsecurity.io/secrets/${owner}/${repo}/${runId}`;
+    const secretUrl = `https://app.stepsecurity.io/secrets/${owner}/${repo}/${runId}`;
     return secretUrl;
 }
 function setSecrets(secrets) {
@@ -3588,99 +3574,86 @@ function setSecrets(secrets) {
 }
 
 ;// CONCATENATED MODULE: ./src/index.ts
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 
 
 
-(() => __awaiter(void 0, void 0, void 0, function* () {
+(async () => {
     waitForSecrets();
-}))();
-function waitForSecrets() {
-    return __awaiter(this, void 0, void 0, function* () {
-        // call API
-        let _http = new lib.HttpClient();
-        _http.requestOptions = { socketTimeout: 3 * 1000 };
-        var counter = 0;
-        var environmentData = parseDataFromEnvironment();
-        var secretUrl = generateSecretURL(environmentData[0], environmentData[1], environmentData[2]);
-        var slackWebhookUrl = core.getInput("slack-webhook-url");
-        var secretsTimeOut = +core.getInput("wait-timeout");
-        if (slackWebhookUrl !== undefined && slackWebhookUrl !== "") {
-            yield sendToSlack(slackWebhookUrl, secretUrl);
-        }
-        var authIDToken = yield core.getIDToken();
-        var secretsString = core.getMultilineInput("secrets");
-        var url = "https://prod.api.stepsecurity.io/v1/secrets";
-        var additionalHeaders = { Authorization: "Bearer " + authIDToken };
-        var putResponse = yield _http.putJson(url, secretsString, additionalHeaders);
-        if (putResponse.statusCode !== 200) {
-            console.log(`error in sending secret metadata`);
-            return;
-        }
-        while (true) {
-            try {
-                authIDToken = yield core.getIDToken();
-                additionalHeaders = { Authorization: "Bearer " + authIDToken };
-                var response = yield _http.get(url, additionalHeaders);
-                if (response.message.statusCode === 200) {
-                    const body = yield response.readBody();
-                    const respJSON = JSON.parse(body);
-                    if (respJSON.areSecretsSet === true) {
-                        setSecrets(respJSON.secrets);
-                        var response = yield _http.del(url, additionalHeaders);
-                        if (response.message.statusCode === 200) {
-                            console.log("Successfully cleared secrets");
-                        }
-                        break;
+})();
+async function waitForSecrets() {
+    // call API
+    const _http = new lib.HttpClient();
+    _http.requestOptions = { socketTimeout: 3 * 1000 };
+    let counter = 0;
+    const environmentData = parseDataFromEnvironment();
+    const secretUrl = generateSecretURL(environmentData[0], environmentData[1], environmentData[2]);
+    const slackWebhookUrl = core.getInput("slack-webhook-url");
+    const secretsTimeOut = +core.getInput("wait-timeout");
+    if (slackWebhookUrl !== undefined && slackWebhookUrl !== "") {
+        await sendToSlack(slackWebhookUrl, secretUrl);
+    }
+    let authIDToken = await core.getIDToken();
+    const secretsString = core.getMultilineInput("secrets");
+    const url = "https://prod.api.stepsecurity.io/v1/secrets";
+    let additionalHeaders = { Authorization: "Bearer " + authIDToken };
+    const putResponse = await _http.putJson(url, secretsString, additionalHeaders);
+    if (putResponse.statusCode !== 200) {
+        console.log(`error in sending secret metadata`);
+        return;
+    }
+    while (true) {
+        try {
+            authIDToken = await core.getIDToken();
+            additionalHeaders = { Authorization: "Bearer " + authIDToken };
+            const response = await _http.get(url, additionalHeaders);
+            if (response.message.statusCode === 200) {
+                const body = await response.readBody();
+                const respJSON = JSON.parse(body);
+                if (respJSON.areSecretsSet === true) {
+                    setSecrets(respJSON.secrets);
+                    const delResponse = await _http.del(url, additionalHeaders);
+                    if (delResponse.message.statusCode === 200) {
+                        console.log("Successfully cleared secrets");
                     }
-                    else {
-                        console.log("\x1b[32m%s\x1b[0m", "Visit this URL to input secrets:", secretUrl);
-                        yield sleep(9000);
-                    }
-                    yield sleep(1000);
-                    counter++;
-                    if (counter > 6 * secretsTimeOut) {
-                        console.log("\ntimed out");
-                        break;
-                    }
+                    break;
                 }
                 else {
-                    let body = yield response.readBody();
-                    if (body !== "Token used before issued") {
-                        console.log(`\nresponse: ${body}`);
-                        break;
-                    }
+                    console.log("\x1b[32m%s\x1b[0m", "Visit this URL to input secrets:", secretUrl);
+                    await sleep(9000);
+                }
+                await sleep(1000);
+                counter++;
+                if (counter > 6 * secretsTimeOut) {
+                    console.log("\ntimed out");
+                    break;
                 }
             }
-            catch (e) {
-                console.log(`error in connecting: ${e}`);
+            else {
+                const body = await response.readBody();
+                if (body !== "Token used before issued") {
+                    console.log(`\nresponse: ${body}`);
+                    break;
+                }
             }
         }
-        // see https://github.com/ruby/setup-ruby/issues/543
-        process.exit(0);
-    });
+        catch (e) {
+            console.log(`error in connecting: ${e}`);
+        }
+    }
+    // see https://github.com/ruby/setup-ruby/issues/543
+    process.exit(0);
 }
-function sendToSlack(slackWebhookUrl, url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        var slackPostData = { text: url };
-        let _http = new lib.HttpClient();
-        _http.requestOptions = { socketTimeout: 3 * 1000 };
-        var slackresponse = yield _http.postJson(slackWebhookUrl, slackPostData);
-        if (slackresponse.statusCode === 200) {
-            console.log("Visit the URL sent to Slack to input the secrets.");
-        }
-        else {
-            console.log("Error sending to Slack. Status code: " + slackresponse.statusCode);
-        }
-    });
+async function sendToSlack(slackWebhookUrl, url) {
+    const slackPostData = { text: url };
+    const _http = new lib.HttpClient();
+    _http.requestOptions = { socketTimeout: 3 * 1000 };
+    const slackresponse = await _http.postJson(slackWebhookUrl, slackPostData);
+    if (slackresponse.statusCode === 200) {
+        console.log("Visit the URL sent to Slack to input the secrets.");
+    }
+    else {
+        console.log("Error sending to Slack. Status code: " + slackresponse.statusCode);
+    }
 }
 function sleep(ms) {
     return new Promise((resolve) => {
